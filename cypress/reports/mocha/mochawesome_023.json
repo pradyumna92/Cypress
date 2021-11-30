@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-11-30T11:09:28.238Z",
+    "end": "2021-11-30T11:09:46.643Z",
+    "duration": 18405,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aa46125d-0503-4cd5-a7de-3cfdb75d781d",
+      "title": "",
+      "fullFile": "cypress/integration/uitests.js",
+      "file": "cypress/integration/uitests.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ae3f838e-64ec-4518-9dbc-5dab20b7cf4b",
+          "title": "Writing UI Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigating to website",
+              "fullTitle": "Writing UI Tests Navigating to website",
+              "timedOut": null,
+              "duration": 16494,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "login.website();\ncy.viewport('macbook-15');\ncy.wait(15000); // cy.log(\"In Amazon\")\n// cy.get('#a-autoid-0').click()\n//Browser actions\n// cy.go('back')\n// cy.go('forward')\n// cy.reload()\n// cy.url().should('contains','amazon')",
+              "err": {},
+              "uuid": "0d744c66-5863-4849-a904-af56fca97e9d",
+              "parentUUID": "ae3f838e-64ec-4518-9dbc-5dab20b7cf4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search for something in amazon",
+              "fullTitle": "Writing UI Tests Search for something in amazon",
+              "timedOut": null,
+              "duration": 401,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// login.search().type('PS4 Games')\n// login.suggestions().find('#issDiv3', { timeout: 5000 }).contains('ps4 games for kids 8-12').click()\n// cy.wait(3000)\n//  MouseOver actions\ncy.get('#nav-link-accountList-nav-line-1').trigger('mouseover');\ncy.get('#nav-flyout-ya-signin .nav-action-inner').click();\ncy.amazon('pnkashyap92@gmail.com', 'Amazon@123'); //Scroll function\n// cy.scrollTo('center')\n// cy.xpath('//img[@class=\"s-image\"]').click()\n// cy.get('.s-no-outline .s-image').should('have.length.greaterThan',2)\n// cy.get('.s-no-outline .s-image').should('have.length',30)\n// cy.get('.s-no-outline .s-image').should('contain.text','Spider-Man: Game of The Year Edition - PlayStation 4')\n//cy.get('.s-no-outline .s-image').first().click()\n// cy.xpath(\"//span[@class='a-size-medium a-color-base a-text-normal']\").each((element,index,listOfelments)=>{\n//     cy.log(element.text())\n//     cy.log(listOfelments.length)\n//     if(index == 4){\n//         element.click()\n//     }\n// })\n//  expect(length).to.be.eql(31)\n// })",
+              "err": {
+                "message": "TypeError: cy.amazon is not a function",
+                "estack": "TypeError: cy.amazon is not a function\n    at Context.eval (http://demo.guru99.com/__cypress/tests?p=cypress/integration/uitests.js:21384:8)",
+                "diff": null
+              },
+              "uuid": "a52852f6-5acb-4749-8447-bfe6295ca236",
+              "parentUUID": "ae3f838e-64ec-4518-9dbc-5dab20b7cf4b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0d744c66-5863-4849-a904-af56fca97e9d"
+          ],
+          "failures": [
+            "a52852f6-5acb-4749-8447-bfe6295ca236"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16895,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
