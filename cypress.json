@@ -9,7 +9,7 @@
             "overwrite": true,
             "html": false,
             "json": true,
-            "timestamp":"mmddyyyy_HHMMss"
+         
         }
     }
 
