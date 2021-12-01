@@ -34,26 +34,20 @@ jobs:
     - name: Run build if present
       run: npm run build --if-present
       
-    - name: Running Cypress tests
-      run: npm run test
-      
-    #- name: Merge test results into one
-    #  run: npm run combine-reports
-      
-   # - name: Generate HTML report
-   #   run: npm run generate-report
-      
-   # - name: Copy test execution videos
-   #   run: |
-   #       mkdir public
-   #       cp -r cypress/videos public/videos
+    - name: Copy test execution videos and screenshots
+      run: |
+          mkdir public
+          cp -r cypress/videos public/videos
+          
+    - name: Merge test reports
+      run: npm run combine:report
 
+    - name: Generate HTML report
+      run: npm run generate:report
       
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
           
