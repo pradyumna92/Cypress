@@ -8,8 +8,7 @@
             "quite": true,
             "overwrite": true,
             "html": false,
-            "json": true,
-         
+            "json": true
         }
     }
 
