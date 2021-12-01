@@ -37,19 +37,17 @@ jobs:
     - name: Running Cypress tests
       run: npm run test
       
-    - name: Merge test results into one
-      run: npm run combine-reports
+    #- name: Merge test results into one
+    #  run: npm run combine-reports
       
-    - name: Generate HTML report
-      run: npm run generate-report
+   # - name: Generate HTML report
+   #   run: npm run generate-report
       
-    - name: Copy test execution videos
-      run: |
-          mkdir public
-          cp -r cypress/videos public/videos
-          cp -r cypress/reports/mocha public/reports/mocha
-          cp -r cypress/reports/mochareports public/reports/mochareports
-          
+   # - name: Copy test execution videos
+   #   run: |
+   #       mkdir public
+   #       cp -r cypress/videos public/videos
+
       
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
