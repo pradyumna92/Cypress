@@ -42,7 +42,12 @@ jobs:
       run: |
           mkdir public
           cp -r cypress/videos public/videos
-          cp -r /home/runner/work/Cypress/Cypress/cypress/reports/mochareports/report.html   public/report.html
+          
+    - name: Merge test results into one
+      run: npm run combine-reports
+      
+    - name: Generate HTML report
+      run: npm run generate-report
       
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
