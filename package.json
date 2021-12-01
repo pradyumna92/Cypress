@@ -22,6 +22,8 @@
     "cypress-multi-reporters": "^1.5.0",
     "cypress-xpath": "^1.6.2",
     "mochawesome": "^7.0.1",
-    "mochawesome-merge": "^4.2.0"
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+
   }
 }
