@@ -6,7 +6,7 @@
   "scripts": {
     "scripts": "cypress run",
     "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > report.json",
-    "generate-report": "marge report.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
+    "generate-report": "marge report.json --reportDir public --assetsDir public/assets --reportPageTitle report.html",
     "test" : "npm run scripts",
     "test:chrome": "cypress run -b chrome",
     "test:firefox": "cypress run -b firefox"
