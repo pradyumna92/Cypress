@@ -1,8 +1,16 @@
 {
-    "reporter": "mochawesome",
+    "chromeWebSecurity":false,
+    "reporter": "cypress-multi-reporters",
     "reporterOptions": {
-        "overwrite": false,
-        "html": false,
-        "json": true
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+            "reportDir": "cypress/reports/mocha",
+            "quite": true,
+            "overwrite": true,
+            "html": false,
+            "json": true,
+            "timestamp":"mmddyyyy_HHMMss"
+        }
     }
+
 }
