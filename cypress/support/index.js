@@ -22,11 +22,21 @@ import'cypress-xpath'
 
 import addContext from 'mochawesome/addContext'
 
-Cypress.on("test:after:run", (test, runnable) => {
+const titleToFileName = (title) => title.replace(/[:\/]/g, "");
 
-    let videoName = Cypress.spec.name
-    videoName = videoName.replace('/.js.*', '.js')
-    const videoUrl = 'videos/' + videoName + '.mp4'
-
-    addContext({ test }, videoUrl)
+Cypress.on("test:after:run", (test, runnable) =>
+{
+    if (test.state === "failed")
+    {
+        let parent = runnable.parent;
+        let filename = "";
+        while (parent && parent.title)
+        {
+            filename = `${titleToFileName(parent.title)} -- ${filename}`;
+            parent = parent.parent;
+        }
+        filename += `${titleToFileName(test.title)} (failed).png`;
+        addContext({ test }, `screenshots/${Cypress.spec.name}/${filename}`);
+        addContext({ test }, `videos/${Cypress.spec.name}.mp4`);
+    }
 });
