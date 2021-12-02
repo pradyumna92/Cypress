@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "scripts": "cypress run",
-    "combine-reports": "mochawesome-merge ./mochawesome-report/*.json -o index.json",
-    "generate-report": "arge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
+    "combine-reports": "npx mochawesome-merge ./mochawesome-report/*.json -o index.json",
+    "generate-report": "npx arge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
     "test" : "npm run scripts",
     "test:chrome": "cypress run -b chrome",
     "test:firefox": "cypress run -b firefox"
